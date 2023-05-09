@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Computer Choice <span id="computer_choice"></span></h2>
+    <h2>User Choice <span id="use_choice"></span></h2>
+    <h2>Result <span id="result"></span></h2>
+
+    <button class="button" id="Paper">Paper</button>
+    <button class="button" id="Rock">Rock</button>
+    <button class="button" id="Sesor">Sesor</button>
+
+    <script>
+      let ComputerDisplay = document.getElementById("computer_choice");
+      let UserDisplay = document.getElementById("use_choice");
+      let ResultDisplay = document.getElementById("result");
+      let PossibleChoiceDisplay = document.querySelectorAll("button");
+      let userchoice;
+      let comuterchoice;
+      PossibleChoiceDisplay.forEach((PossibleChoiceDisplay) => {
+        PossibleChoiceDisplay.addEventListener("click", (event) => {
+          userchoice = event.target.id;
+          UserDisplay.innerHTML = userchoice;
+
+          getvalueofcomuter();
+          getResult();
+        });
+      });
+
+      function getvalueofcomuter() {
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        if (randomNumber === 1) {
+          comuterchoice = "Rock";
+        }
+        if (randomNumber === 2) {
+          comuterchoice = "Paper";
+        }
+        if (randomNumber === 3) {
+          comuterchoice = "Sesor";
+        }
+        ComputerDisplay.innerHTML = comuterchoice;
+      }
+
+      function getResult() {
+        if (userchoice === comuterchoice) {
+          result = "Draw the Match";
+        }
+        if (userchoice === "Rock" && comuterchoice === "Paper") {
+          result = "Computer win ";
+        }
+
+        if (userchoice === "Rock" && comuterchoice === "Sesor") {
+          result = "User Win";
+        }
+        if (userchoice === "Paper" && comuterchoice === "Rock") {
+          result = "Computer  Win";
+        }
+        if (userchoice === "Paper" && comuterchoice === "Sesor") {
+          result = "Computer  Win";
+        }
+        if (userchoice === "Sesor" && comuterchoice === "Rock") {
+          result = "Computer  Win";
+        }
+        if (userchoice === "Sesor" && comuterchoice === "Paper") {
+          result = "User  Win";
+        }
+
+        ResultDisplay.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

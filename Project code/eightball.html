@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let name = prompt("enter Your name to play the game");
+      //   document.write(`The name is ${name},Hello ${name}`);
+      let user = prompt("enter the value between 1 to 8");
+      let eightball = "";
+
+      let randomNumber = Math.floor(Math.random() * 8);
+      if (randomNumber >= user) {
+        document.write(
+          `randomNumber is ${randomNumber} and the userNumber is ${user} the number is greater than `
+        );
+      } else if (randomNumber <= user) {
+        document.write(
+          `randomNumber is ${randomNumber} and the userNumber is ${user} the number is less than `
+        );
+
+        // eightball = "that is the second Number😁";
+      } else if (randomNumber === user) {
+        document.write(
+          `randomNumber is ${randomNumber} and the userNumber is ${user}`
+        );
+        // eightball = "that is the third Number😁";
+      }
+      //   else if (randomNumber === 4) {
+      //     eightball = "that is the fourth Number😁";
+      //   } else if (randomNumber === 5) {
+      //     eightball = "that is the fifth Number😁";
+      //   } else if (randomNumber === 6) {
+      //     eightball = "that is the sixth Number😁";
+      //   } else if (randomNumber === 7) {
+      //     eightball = "that is the seventh Number😁";
+      //   } else if (randomNumber === 8) {
+      //     eightball = "that is the eight Number😁";
+      //   }
+    </script>
+  </body>
+</html>
